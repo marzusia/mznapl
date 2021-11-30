@@ -9,4 +9,5 @@ class IndexGuestbookView(BaseView):
         return {
             **super().get_context_data(**kwargs),
             'entries': GuestbookEntry.objects.all().order_by('-created_at'),
+            'title': 'guestbook',
         }

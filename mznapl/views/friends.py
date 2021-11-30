@@ -9,4 +9,5 @@ class IndexFriendsView(BaseView):
         return {
             **super().get_context_data(**kwargs),
             'friends': Friend.objects.all(),
+            'title': 'friends',
         }
