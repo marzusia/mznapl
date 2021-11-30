@@ -22,10 +22,6 @@ from .views.post import IndexPostView, ShowPostView
 from .views.static import IndexView
 
 
-handler404 = 'mznapl.views.handler404'
-handler500 = 'mznapl.views.handler500'
-
-
 urlpatterns = [
     path('posts', IndexPostView.as_view(), name='post.index'),
     path('posts/<slug:slug>', ShowPostView.as_view(), name='post.show'),
