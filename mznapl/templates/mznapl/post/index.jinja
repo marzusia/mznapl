@@ -3,9 +3,13 @@
 {% block body %}
     <h2>Posts</h2>
     {% if posts %}
-        <ul class="list">
+        <ul class="list h-feed">
             {% for post in posts %}
-                <li><a href="{{ url('post.show', slug=post.slug) }}">{{ post.title }}· {{ post.created_at|date2str }} <span class="tag tag-{{ post.tag }}">{{ post.tag }}</span></a></li>
+                <li class="h-entry">
+                    <span class="tag tag-left tag-{{ post.tag }}">{{ post.tag }}</span>
+                    <a href="{{ url('post.show', slug=post.slug) }}" class="u-url p-name">{{ post.title }}</a>
+                    <time datetime="{{ post.created_at }}" class="dt-published small subtle">· {{ post.created_at|date2str }}</time>
+                </li>
             {% endfor %}
         </ul>
 

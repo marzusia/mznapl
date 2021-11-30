@@ -177,6 +177,14 @@ footer {
     opacity: .6;
 }
 
+.small {
+    font-size: .875em;
+}
+
+.subtle {
+    opacity: .7;
+}
+
 img.image {
     border: 3px solid var(--color-persian-green);
     border-radius: 3px;
@@ -194,6 +202,10 @@ ul.list {
     padding: 0 0 0 1rem;
     list-style-type: none;
     margin-bottom: 1rem;
+}
+
+ul.list li {
+    margin-bottom: .25em;
 }
 
 ul.list li:before {
@@ -227,19 +239,33 @@ blockquote.quote {
 .tag {
     font-size: .8175em;
     text-transform: uppercase;
-    margin-left: .4em;
     padding: .2em .4em;
     border-radius: 3px;
     display: inline-block;
     color: var(--color-white);
 }
 
-.tag.tag-note {
-    background: var(--color-popstar);
+.tag.tag-left {
+    margin-right: .4em;
+}
+
+.tag.tag-right {
+    margin-left: .4em;
+}
+
+.tag.tag-note,
+.tag.tag-recipe {
+    background: var(--color-persian-green);
 }
 
 .tag.tag-blog {
-    background: var(--color-persian-green);
+    background: var(--color-popstar);
+}
+
+.tag.tag-poetry,
+.tag.tag-art {
+    background: var(--color-sage);
+    color: var(--color-dark);
 }
 
 .meta {
