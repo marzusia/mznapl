@@ -1,0 +1,21 @@
+{% extends "mznapl/base/base.jinja" %}
+
+{% block body %}
+    <h2>Guestbook</h2>
+    <p>If you'd like to sign the guestbook, get in touch with me somewhere.</p>
+    <hr>
+    {% if entries %}
+        {% for entry in entries %}
+            <div class="guestbook-entry">
+                <blockquote class="quote">{{ entry.body }}</blockquote>
+                {% if entry.url %}
+                    <p>─<a href="{{ entry.url }}">{{ entry.name }}</a>· {{ entry.created_at|date2str }}</p>
+                {% else %}
+                    <p>─{{ entry.name }}· {{ entry.created_at|date2str }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No one has signed the guestbook yet. :(</p>
+    {% endif %}
+{% endblock body %}

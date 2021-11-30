@@ -1,0 +1,15 @@
+{% extends "mznapl/base/base.jinja" %}
+
+{% block body %}
+    <h2>Posts</h2>
+    {% if posts %}
+        <ul class="list">
+            {% for post in posts %}
+                <li><a href="{{ url('post.show', slug=post.slug) }}">{{ post.title }}· {{ post.created_at|date2str }} <span class="tag tag-{{ post.tag }}">{{ post.tag }}</span></a></li>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+        <p>No posts yet! Check back.</p>
+    {% endif %}
+{% endblock body %}

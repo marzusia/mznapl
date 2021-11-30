@@ -1,0 +1,11 @@
+{% extends "mznapl/base/base.jinja" %}
+
+{% block body %}
+    <h2>Friends</h2>
+    <p>These are cool people with their own sites. You should check them out, they're all super nifty.</p>
+    <ul class="list">
+        {% for friend in friends %}
+            <li><a href="{{ friend.url }}">{{ friend.label }}{% if friend.note %}· {{ friend.note }}{% endif %}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock body %}

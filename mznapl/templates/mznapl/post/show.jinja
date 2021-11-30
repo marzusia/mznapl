@@ -1,0 +1,13 @@
+{% extends "mznapl/base/base.jinja" %}
+
+{% block body %}
+    <article class="h-entry">
+        <h2 class="p-name">{{ post.title }}</h2>
+        <div class="meta">
+            <a href="https://mzna.pl" class="p-author h-card">marzena</a>
+            <time class="dt-published" datetime="{{ post.created_at }}">{{ post.created_at|date2str }}</time>
+            <span class="tag tag-{{ post.tag }}">{{ post.tag }}</span>
+        </div>
+        <div class="e-content">{{ post.body|safe }}</div>
+    </article>
+{% endblock body %}

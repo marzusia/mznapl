@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>·☆✦ {{ title }} • mzna.pl ✦☆·</title>
+        <link rel="stylesheet" href="{{ static('stylesheets/main.mzna.css') }}" type="text/css">
+    </head>
+    <body>
+        <div class="root">
+            <header>
+                <h1>mzna.pl</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="{{ url('index') }}">home</a></li>
+                    <li><a href="{{ url('friends.index') }}">friends</a></li>
+                    {% for page in pages %}
+                        <li><a href="{{ url('page.show', slug=page.slug) }}">{{ page.title|lower }}</a></li>
+                    {% endfor %}
+                    <li><a href="/posts">posts</a></li>
+                    <li><a href="/guestbook">guestbook</a></li>
+                </ul>
+            </nav>
+            <div class="wrapper">
+                <main>
+                    {% block body %}
+                    {% endblock body %}
+                </main>
+                <aside class="h-card hcard vcard">
+                    <img src="{{ static('images/avi.png') }}" alt="Avatar" class="avatar u-photo" rel="me">
+                    <a href="https://mzna.pl" rel="me" class="u-uid u-url p-name">marzena</a>
+                    <ul class="infobox">
+                        <li class="p-pronoun">she/her</li>
+                        <li class="p-location">uk-based</li>
+                        <li class="p-relationship-status">gay & married</li>
+                        <li class="p-astrology">☉♈︎ · ☾♑︎ · ↑♋︎</li>
+                        <li>
+                            <a href="https://github.com/zeeonbees" class="no-ext" rel="me">github</a> ·
+                            <a href="https://www.last.fm/user/zeeonbees" class="no-ext" rel="me">lastfm</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <footer>
+                made with ♥ by zee
+            </footer>
+        </div>
+    </body>
+</html>
