@@ -9,6 +9,6 @@ class BaseView(TemplateView):
     def get_context_data(self, **kwargs):
         return {
             **super().get_context_data(**kwargs),
-            'pages': Page.objects.filter(hidden=False).values('title', 'slug'),
+            'pages': Page.objects.filter(show_in_nav=True).values('title', 'slug'),
             'title': 'home',
         }

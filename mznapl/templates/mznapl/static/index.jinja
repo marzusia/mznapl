@@ -1,7 +1,5 @@
 {% extends "mznapl/base/base.jinja" %}
 
 {% block body %}
-    <p>Hey! You found my website! I'm Zee and I do things on the internet.</p>
-    <p>This site is inspired by the <a href="https://indieweb.org/">indieweb</a> project and its ideas about online identity.</p>
-    <p>You can use the links above to browse around some of the different pages I've woven together. Thanks for visiting this space.</p>
+    {{ page.body|safe }}
 {% endblock body %}

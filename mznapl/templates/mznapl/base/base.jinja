@@ -14,10 +14,10 @@
             <nav>
                 <ul>
                     <li><a href="{{ url('index') }}">home</a></li>
-                    <li><a href="{{ url('friends.index') }}">friends</a></li>
                     {% for page in pages %}
                         <li><a href="{{ url('page.show', slug=page.slug) }}">{{ page.title|lower }}</a></li>
                     {% endfor %}
+                    <li><a href="{{ url('friends.index') }}">friends</a></li>
                     <li><a href="{{ url('post.index') }}" rel="feed">posts</a></li>
                     <li><a href="{{ url('guestbook.index') }}">guestbook</a></li>
                 </ul>
