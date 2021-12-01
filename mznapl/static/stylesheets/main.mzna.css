@@ -186,11 +186,11 @@ footer {
 }
 
 img.image {
-    border: 2px solid var(--color-sage);
-    border-radius: 3px;
+    border-radius: 5px;
     max-width: 380px;
     display: block;
     margin: 0 auto 1em auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .mb {
