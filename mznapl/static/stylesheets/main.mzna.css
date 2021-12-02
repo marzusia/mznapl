@@ -56,12 +56,16 @@ a[href^="https://"]:not([href*="mzna.pl"]):not(.no-ext):after {
     display: inline-block;
     margin-left: .2em;
     mask: url(../images/ext.svg);
+    -webkit-mask: url(../images/ext.svg);
     background: var(--color-popstar);
     width: 1em;
     height: 1em;
     mask-size: .85em;
+    -webkit-mask-size: .85em;
     mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
     mask-position: top left;
+    -webkit-mask-position: top left;
     content: '';
     opacity: .7;
 }
