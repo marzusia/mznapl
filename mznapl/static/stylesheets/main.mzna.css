@@ -50,9 +50,9 @@ a:hover {
     text-decoration: underline;
 }
 
-a[href^="//"]:not([href*="mzna.pl"]):not(.no-ext):after,
-a[href^="http://"]:not([href*="mzna.pl"]):not(.no-ext):after,
-a[href^="https://"]:not([href*="mzna.pl"]):not(.no-ext):after {
+a[href^="//"]:not([href*="mzna.pl"]):not(.no-ext):not(.reaction):after,
+a[href^="http://"]:not([href*="mzna.pl"]):not(.no-ext):not(.reaction):after,
+a[href^="https://"]:not([href*="mzna.pl"]):not(.no-ext):not(.reaction):after {
     display: inline-block;
     margin-left: .2em;
     mask: url(../images/ext.svg);
@@ -283,6 +283,29 @@ blockquote.quote {
     margin: 0 .5em;
     color: var(--color-white);
     opacity: .6;
+}
+
+p.comment-helper {
+    margin-top: 1.5em;
+}
+
+#webmentions h2 {
+    font-size: 1.2rem;
+}
+
+#webmentions ul {
+    list-style-type: none;
+}
+
+#webmentions ul li {
+    margin-bottom: 1em;
+    border-left: 3px solid var(--color-sage);
+    padding-left: 1em;
+}
+
+#webmentions span.text {
+    display: block;
+    margin-top: .25em;
 }
 
 #webmentions img {
