@@ -284,3 +284,8 @@ blockquote.quote {
     color: var(--color-white);
     opacity: .6;
 }
+
+#webmentions img {
+    max-height: 1.2em;
+    margin-right: -1ex;
+}

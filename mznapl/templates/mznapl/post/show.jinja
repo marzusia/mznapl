@@ -1,5 +1,10 @@
 {% extends "mznapl/base/base.jinja" %}
 
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ static('scripts/webmention.min.js') }}" async></script>
+{% endblock %}
+
 {% block body %}
     <article class="h-entry">
         <h2 class="p-name">{{ post.title }}</h2>
@@ -10,4 +15,8 @@
         </div>
         <div class="e-content">{{ post.body|safe }}</div>
     </article>
+    <hr>
+    <h4>Comments</h4>
+    <div id="webmentions"></div>
+    <p class="small subtle">Comment with a <a href="https://webmentions.neocities.org/">webmention</a></p>
 {% endblock body %}
