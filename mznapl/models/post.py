@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from .base.abstracts import UpdatableModel
 from .base.choices import PostTag
@@ -31,3 +32,6 @@ class Post(UpdatableModel, AutoSlugMixin):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('post.show', kwargs={'slug': self.slug})
