@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 
-from .views.feed import LatestPostsFeed
+from .views.feed import RssPostsFeed, AtomPostsFeed
 from .views.friends import IndexFriendsView
 from .views.guestbook import IndexGuestbookView
 from .views.page import ShowPageView
@@ -28,7 +28,8 @@ urlpatterns = [
     path('posts/<slug:slug>', ShowPostView.as_view(), name='post.show'),
     path('guestbook', IndexGuestbookView.as_view(), name='guestbook.index'),
     path('friends', IndexFriendsView.as_view(), name='friends.index'),
-    path('rss', LatestPostsFeed(), name='feed'),
+    path('feed/rss', RssPostsFeed(), name='feed.rss'),
+    path('feed/atom', AtomPostsFeed(), name='feed.atom'),
     path('<slug:slug>', ShowPageView.as_view(), name='page.show'),
     path('', IndexView.as_view(), name='index'),
 ]
